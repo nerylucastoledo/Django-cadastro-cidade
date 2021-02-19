@@ -4,11 +4,13 @@
 
         <h2>Cidades cadastradas:</h2>
 
+        <a class="btn btn-primary mt-4 mb-4" href="{% url 'cidade-cadastro' %}">Cadastrar cidade</a>
+
         <div>
             <ul class="list-group">
                 {% for cidade in cidades %}
                 <a class="list-group-item mt-2 {% if cidade.capital %} active {% endif %}"
-                   href="{% url 'cidades-detalhe' cidade.id %}">Cidade: {{ cidade }}
+                   href="{% url 'cidades-detalhe' cidade.id %}">{{ cidade }}
                 </a>
                 {% endfor %}
             </ul>
