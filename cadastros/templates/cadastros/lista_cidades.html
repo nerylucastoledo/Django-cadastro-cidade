@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+        <h2>Cidades cadastradas:</h2>
+
+        <div>
+            <ul class="list-group">
+                {% for cidade in cidades %}
+                <a class="list-group-item mt-2 {% if cidade.capital %} active {% endif %}"
+                   href="{% url 'cidades-detalhe' cidade.id %}">Cidade: {{ cidade }}
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+
+{% endblock %}
