@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+
+  app:
+    image: mdillon/postgis
+    volumes:
+      - .:/code
+    ports:
+      - 5431:5432
+    depends_on:
+      - db_prod
+
+  db_prod:
+    image: mdillon/postgis
+    environment:
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: sidia
+    volumes:
+      - sidia-data-prod:/var/lib/postgresql/data
+
+volumes:
+  sidia-data-prod:

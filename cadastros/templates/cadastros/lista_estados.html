@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+        <h2>Estados cadastradas:</h2>
+
+        <a class="btn btn-primary mt-4 mb-4" href="{% url 'estado-cadastro' %}">Cadastrar estados</a>
+        <a class="btn btn-warning mt-4 mb-4" href="{% url 'cidades-list' %}">Inicio</a>
+
+        <div>
+            <ul class="list-group">
+                {% for estado in estados %}
+                <a class="list-group-item mt-2" href="{% url 'estados-detalhe' estado.id %}">{{ estado }}</a>
+                {% endfor %}
+            </ul>
+        </div>
+
+{% endblock %}
