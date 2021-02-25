@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,8 +13,22 @@
 </head>
 <body>
 
+    <style>
+        .logo {
+            width: 1100px;
+            display: block;
+            margin: 0 auto;
+            max-height: 300px;
+            margin-bottom: 50px
+        }
+
+    </style>
+
     <div class="alert alert-primary" role="alert">
         <h1 class="text-center">Bem vindo ao CRUD de {{ titulo }}</h1>
+    </div>
+    <div>
+        <img class="logo" src="{% static 'cadastros/img/logo.jpg' %}">
     </div>
 
     {% if messages %}
@@ -32,6 +47,8 @@
         {% block conteudo %}
 
         {% endblock %}
+
+        <img src="{% static 'img/logoMarcas.jpg' %}" class="rounded mx-auto d-block mt-5">
 
     </div>
 
