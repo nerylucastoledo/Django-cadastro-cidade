@@ -10,7 +10,7 @@ class CidadeSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Cidade
-        fields = ['id', 'estado_nome', 'pais_nome', 'nome', 'capital', 'descricao']
+        fields = ['id', 'estado_nome', 'estado', 'pais_nome', 'nome', 'capital', 'descricao']
 
 
 class TestSerializer(serializers.Serializer):
