@@ -14,6 +14,6 @@ comands = [
     # 'python manage.py runserver 0.0.0.0:8000 --settings=proj.settings_production',
     'gunicorn proj.wsgi:application --env DJANGO_SETTNGS_MODULE=proj.settings_production --limit-request-line 0 --timeout 600 -w 4 -b :8000'
 ]
-
+32
 for command in comands:
     os.system(command)

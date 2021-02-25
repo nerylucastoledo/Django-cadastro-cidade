@@ -1,12 +1,15 @@
 from django.contrib.auth.decorators import login_required
 from django.urls import path
 
+from cadastros.apis import CidadeAPIList
 from cadastros.views import CidadeList, CidadeDetail, CidadeDelete, CidadeCreate, CidadeUpdate, EstadoList, \
     EstadoCreate, EstadoDelete, EstadoDetail
 
 urlpatterns = [
     path('', CidadeList.as_view(), name="cidades-list"),
     path('estados/', EstadoList.as_view(), name="estados-list"),
+
+    path('api/cidades', CidadeAPIList.as_view(), name="cidade-api"),
 
     path('detalhe/<int:pk>/', CidadeDetail.as_view(), name="cidades-detalhe"),
     path('estados/detalhe/<int:pk>/', EstadoDetail.as_view(), name="estados-detalhe"),

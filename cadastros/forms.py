@@ -4,6 +4,11 @@ from django.core.exceptions import ValidationError
 from cadastros.models import Cidade, Estado
 
 
+class TestForm(forms.Form):
+
+    nome = forms.CharField(max_length=45, required=True)
+
+
 class CidadeForm(forms.ModelForm):
 
     class Meta:
