@@ -27,6 +27,11 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = '/login/'
+LOGOUT_URL = '/logout/'
+
 
 # Application definition
 
@@ -135,6 +140,8 @@ STATIC_ROOT = 'static'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static_files')
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backeds.console.EmailBackend'
 
 #hack para importar os arquivos de settings de acordo com o ambiente
 try:

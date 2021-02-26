@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - SIDIA</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'auth/style.css' %}">
+
+</head>
+<body>
+    <div class="container bootstrap snippets bootdey">
+      <div class="header">
+        <ul class="nav nav-pills pull-right">
+          <li><a href="#">&nbsp;</a></li>
+        </ul>
+        <h3 class="text-muted text-center prj-name">SIDIA</h3>
+      </div>
+
+      <div style="height:auto;min-height:300px;" class="jumbotron">
+        <div class="col-md-12 text-center">
+           <img class="img-responsive center-block img-user" src="https://bootdey.com/img/Content/Manbrown2.png">
+        </div>
+        <div class="col-md-6 form-content mx-auto d-block">
+          <form accept-charset="utf-8" method="post" id="UserLoginForm" class="form-signin" action="">
+            {% csrf_token %}
+            <h1 class="form-signin-heading text-muted text-center">Login</h1>
+              {% if form.errors %}
+                <div>
+                    <p class="text-danger text-center">Usuário ou senha inválidos!</p>
+                </div>
+              {% endif %}
+            <input type="text" id="username" autofocus="autofocus" placeholder="Usuário" class="form-control text-center" name="username">
+            <input type="password" id="password" placeholder="Senha" class="form-control mt-2 text-center" name="password">
+            <button type="submit" class="btn btn-lg mt-2 btn-info btn-block">
+              <i class="fa fa-share"></i>
+              Login
+            </button>
+              <a class="text-center d-block mt-3" href="{% url 'password_reset' %}">Esqueceu a senha?</a>
+          </form>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
