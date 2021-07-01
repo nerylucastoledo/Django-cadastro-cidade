@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-
+import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -25,7 +25,9 @@ SECRET_KEY = '4zc$vsmb@r97t!of_o^10e11p*=o&lkal^i92fa=m5!=(9nt^1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://cadastro-cidade.herokuapp.com/"]
+
+
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
@@ -153,3 +155,5 @@ except ImportError:
         from .settings_production import *
     except:
         pass
+
+django_heroku.settings(locals())
